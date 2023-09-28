@@ -10,13 +10,20 @@ function largerOrSmaller() {
   let int1 = parseInt(prompt('Enter the first integer: '));
   let int2 = parseInt(prompt('Enter the second integer: '));
 
-  if (int1 == int2) {
-    alert('Sorry, the two numbers are the same!');
+  if (isNaN(int1) || isNaN(int2)) {
+    alert('Please enter only integer numbers!');
     return;
   }
-  // if numbers are different, find the max
+    
+  // find the max
   let max = (int1>int2 ? int1 : int2);
-  alert(`The max between ${int1} and ${int2} is: ${max}`)
+  let resultMessage=`The max between ${int1} and ${int2} is: ${max}`;
+
+  if (int1 == int2) {
+      alert(`${resultMessage} (both numbers are max because they are the same!)`)
+  } else {
+    alert(`${resultMessage}`);
+  }
 
 }
 
